@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Level Counter</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link href="rpgStyle/dist/rpgui.css" rel="stylesheet" type="text/css" >
+  <script src="dist/rpgui.js"></script>
+  <script src="script.js"></script>
+
+  </script>
+</head>
+
+<body>
+  <div class="rpgui-content">
+    <div id="top">
+		  <p class="center">Level: <span id="level">1</span></p>
+    </div>
+    <div id="middle">
+      <div class="image-container">
+        <img src="images/bezi.png" alt="bezi" id="bezi">
+      </div>
+    </div>
+    <div id="bot">
+      <button id="decreaseBTN" class="rpgui-button" type="button" onclick="decrease()"><p id="buttons">-</p></button>
+      <button id="increaseBTN" class="rpgui-button" type="button" onclick="increase()"><p id="buttons">+</p></button>
+      <div id="rollButt">
+        <button id="roll" class="rpgui-button" type="button" onclick="roll()"><p id="buttonsRoll">Roll</p></button>
+        <span id="rollNumb"></span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
