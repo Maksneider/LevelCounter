@@ -30,5 +30,5 @@ function roll(){
   rollSound.play()
   rollSound.currentTime=0;
   let rolled = getRandomINT(1,6);
-  document.getElementById("rollNumb").innerHTML = rolled;
+  document.getElementById("roll-number").innerHTML = rolled;
 }

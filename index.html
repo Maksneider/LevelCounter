@@ -13,23 +13,25 @@
 </head>
 
 <body>
-  <div class="rpgui-content">
-    <div id="top">
-		  <p class="center">Level: <span id="level">1</span></p>
-    </div>
-    <div id="middle">
-      <div class="image-container">
-        <img src="images/bezi.png" alt="bezi" id="bezi">
+    <div class="rpgui-content">
+      <div class="top">
+        <div class="level-div">
+		     <p id="level-text">Level: <span id="level">1</span></p>
+        </div>
+      </div>
+      <div class="middle">
+        <div class="image-container">
+          <img src="images/bezi.png" alt="bezi" id="bezi">
+        </div>
+      </div>
+      <div class="level-controller-div">
+        <button id="decreaseBTN" class="rpgui-button" type="button" onclick="decrease()"><p id="level-buttons">-</p></button>
+        <button id="increaseBTN" class="rpgui-button" type="button" onclick="increase()"><p id="level-buttons">+</p></button>
+      </div>
+      <div class="roll-class">
+        <button id="roll" class="rpgui-button" type="button" onclick="roll()"><p id="roll-button">Roll</p></button>
+        <span id="roll-number"></span>
       </div>
     </div>
-    <div id="bot">
-      <button id="decreaseBTN" class="rpgui-button" type="button" onclick="decrease()"><p id="buttons">-</p></button>
-      <button id="increaseBTN" class="rpgui-button" type="button" onclick="increase()"><p id="buttons">+</p></button>
-      <div id="rollButt">
-        <button id="roll" class="rpgui-button" type="button" onclick="roll()"><p id="buttonsRoll">Roll</p></button>
-        <span id="rollNumb"></span>
-      </div>
-    </div>
-  </div>
 </body>
 </html>
