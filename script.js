@@ -5,6 +5,7 @@ var lvlU=new Audio();
 lvlU.src="audio/lvlUp.mp3";
 var rollSound= new Audio();
 rollSound.src="audio/roll.mp3";
+var fightFlag=false;
 
 function increase() {
   document.getElementById('level').innerHTML = ++lvl;
@@ -31,4 +32,34 @@ function roll(){
   rollSound.currentTime=0;
   let rolled = getRandomINT(1,6);
   document.getElementById("roll-number").innerHTML = rolled;
+}
+
+function fight() {
+  hidingController();
+}
+
+
+
+function hidingController(){
+  let top = document.getElementById("level-text");
+  let mid = document.getElementById("bezi");
+  let botBTN = document.getElementById("decreaseBTN");
+  let botBTN2 = document.getElementById("increaseBTN");
+  if(!fightFlag){
+    top.style.display="none";
+    mid.style.display="none";
+    botBTN.style.display="none";
+    botBTN2.style.display="none";
+    document.getElementById("fight-text").innerHTML="Back";
+    document.getElementById("fight-menu").style.display="initial";
+    fightFlag=true;
+  }else{
+    top.style.display="initial";
+    mid.style.display="initial";
+    botBTN.style.display="initial";
+    botBTN2.style.display="initial";
+    document.getElementById("fight-text").innerHTML="Fight";
+    document.getElementById("fight-menu").style.display="none";
+    fightFlag=false;
+  }
 }
