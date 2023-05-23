@@ -9,6 +9,7 @@ var fightFlag=false;
 
 function increase() {
   document.getElementById('level').innerHTML = ++lvl;
+  document.getElementById('fight-level').innerHTML = lvl;
   lvlU.play();
   lvlU.currentTime=0;
 }
@@ -16,6 +17,7 @@ function increase() {
 function decrease() {
   if(lvl>1){
     document.getElementById('level').innerHTML = --lvl;
+    document.getElementById('fight-level').innerHTML = lvl;
     lvlD.play();
     lvlD.currentTime=0;
   }
