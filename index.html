@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
   <link href="rpgStyle/dist/rpgui.css" rel="stylesheet" type="text/css" >
-  <script src="dist/rpgui.js"></script>
+  <script src="rpgStyle/dist/rpgui.js"></script>
   <script src="script.js"></script>
 
   </script>
@@ -23,7 +23,20 @@
         <div class="image-container">
           <img src="images/bezi.png" alt="bezi" id="bezi">
         </div>
-        <div class="rpgui-container framed-golden" id="fight-menu">Hi</div>
+        <div class="rpgui-container framed-golden" id="fight-menu">
+          <div class="fight-menu-container">
+            <p class="left-text" id="fight-menu-level">Level:</p>
+            <p class="right-text" id="fight-level">1</p>
+          </div>
+          <div class="fight-menu-container">
+            <p class="left-text" id="item-bonus">Item bonus:</p>
+            <p class="right-text" id="fight-bonus">0</p>
+          </div>
+          <div class="fight-menu-container">
+            <p class="left-text" id="fight-book">Munchkinomikon:</p>
+            <input class="rpgui-checkbox golden" type="checkbox" checked="" data-rpguitype="checkbox"><label style="padding-left: 22px"><label>
+          </div>
+        </div>
       </div>
       <div class="level-controller-div">
         <button id="decreaseBTN" class="rpgui-button" type="button" onclick="decrease()"><p id="level-buttons">-</p></button>
