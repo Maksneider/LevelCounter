@@ -21,10 +21,6 @@ body {
   margin-left: 10px;
 }
 
-#level-text{
-  font-size: 200%;
-}
-
 /* Image container */
 
 .middle{
@@ -101,13 +97,6 @@ body {
   height: 60px;
 }
 
-#roll-number{
-  font-size: 18px;
-}
-
-#fight-text{
-  font-size: 15px;
-}
 
 /* Fight container */
 
@@ -131,15 +120,3 @@ body {
   margin-left: auto;
 }
 
-#fight-menu-level{
-  font-size: 15px;
-}
-
-#fight-level{
-  font-size: 20px;
-}
-
-
-#fight-bonus{
-  font-size: 20px;
-}
