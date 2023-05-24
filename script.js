@@ -12,6 +12,8 @@ lvlU.src="audio/lvlUp.mp3";
 var rollSound= new Audio();
 rollSound.src="audio/roll.mp3";
 var fightFlag=false;
+var fightSound= new Audio();
+fightSound.src="audio/walka.mp3";
 
 function increase() {
   document.getElementById('level').innerHTML = ++lvl;
@@ -99,6 +101,8 @@ function hidingController(){
     document.getElementById("fight-text").innerHTML="Back";
     document.getElementById("fight-menu").style.display="initial";
     fightFlag=true;
+    fightSound.play();
+    fightSound.currentTime=0;
   }else{
     top.style.display="initial";
     mid.style.display="initial";
