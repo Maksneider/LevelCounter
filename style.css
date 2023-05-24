@@ -131,6 +131,13 @@ body {
     display: none;
     position: fixed;
   }
+  
+  .progress-container{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0px;
+  }
+
 }
 
 
@@ -138,6 +145,16 @@ body {
   display: flex;
   justify-content: space-between;
   font-size: 15px;
+}
+
+.progress-container{
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 25px;
+}
+
+#progress-bar{
+  width: 320px;
 }
 
 .left-text {

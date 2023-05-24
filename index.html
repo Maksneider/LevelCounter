@@ -41,7 +41,7 @@
           </div>
           <div class="fight-menu-container">
             <p class="left-text" id="fight-book">Munchkinomikon:</p>
-            <input class="rpgui-checkbox golden" type="checkbox" checked="" data-rpguitype="checkbox"><label style="padding-left: 22px"><label>
+            <input class="rpgui-checkbox golden" type="checkbox" onclick="addBook()" data-rpguitype="checkbox" checked><label style="padding-left: 22px"><label>
           </div>
           <div class="fight-menu-container">
             <p class="left-text" id="monster">Monster level:</p>
@@ -50,11 +50,14 @@
           <div class="small-buttons-container">
             <button id="small-buttons" class="rpgui-button" type="button" onclick="setMonster()"><p style="font-size: 20px;">Set</p></button>
           </div>
-          <div class="fight-menu-container">
-            <img scr="images/bezi-glowa.png" alt="glowa"></img>
-          </div>
-          <div class="fight-menu-container">
-            <div class="rpgui-progress red" id="progress-bar"></div>
+          <div class="progress-container">
+            <div class="fight-menu-container">
+              <img src="images/bezi-glowa.png" alt="glowa"><p id="allHeroBonus" style="font-size: 23px;">1</p><p style="font-size: 20px;">vs</p><p id="allMonsterBonus" style="font-size: 23px;">1</p></img>
+              <img src="images/scierwojad.png" alt="scierwojad"></img>
+            </div>
+            <div class="fight-menu-container">
+              <div class="rpgui-progress red" id="progress-bar"></div>
+            </div>
           </div>
         </div>
       </div>

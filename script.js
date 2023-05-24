@@ -1,5 +1,10 @@
+let lvl=1;
+let allHeroBonus=1;
+let itemBonus=0;
+let monsterBonus=1;
+let bookBonus=0;
+let bookFlag=true;
 
-var lvl=1;
 var lvlD=new Audio();
 lvlD.src="audio/lvlDown.mp3";
 var lvlU=new Audio();
@@ -11,6 +16,7 @@ var fightFlag=false;
 function increase() {
   document.getElementById('level').innerHTML = ++lvl;
   document.getElementById('fight-level').innerHTML = lvl;
+  updateAllHeroBonus();
   lvlU.play();
   lvlU.currentTime=0;
 }
@@ -19,6 +25,7 @@ function decrease() {
   if(lvl>1){
     document.getElementById('level').innerHTML = --lvl;
     document.getElementById('fight-level').innerHTML = lvl;
+    updateAllHeroBonus();
     lvlD.play();
     lvlD.currentTime=0;
   }
@@ -38,27 +45,30 @@ function roll(){
 }
 
 function setBonus() {
-  var bonus = prompt("What's your bonus?");
-  if (bonus === 'chuj'){
+  itemBonus = prompt("What's your bonus?");
+  if (itemBonus === 'chuj'){
     alert("Sam jesteś chuj");
-  }else if(parseInt(bonus) === parseInt(bonus, 10)){
-    if(parseInt(bonus) > 999 || parseInt(bonus) < 0){
+  }else if(parseInt(itemBonus) === parseInt(itemBonus, 10)){
+    if(parseInt(itemBonus) > 999 || parseInt(itemBonus) < 0){
     document.getElementById("fight-bonus").innerHTML= 0;
     }else{
-    document.getElementById("fight-bonus").innerHTML= parseInt(bonus);
+    document.getElementById("fight-bonus").innerHTML= parseInt(itemBonus);
+    updateAllHeroBonus();
     }
   }
 }
 
 function setMonster() {
-  var bonus = prompt("Set monster's level");
-  if (bonus === 'chuj'){
+  var monsterBonus = prompt("Set monster's level");
+  if (monsterBonus === 'chuj'){
     alert("Sam jesteś chuj");
-  }else if(parseInt(bonus) === parseInt(bonus, 10)){
-    if(parseInt(bonus) > 999 || parseInt(bonus) < 0){
-    document.getElementById("monster-level").innerHTML= 0;
+  }else if(parseInt(monsterBonus) === parseInt(monsterBonus, 10)){
+    if(parseInt(monsterBonus) > 999 || parseInt(monsterBonus) < 0){
+     document.getElementById("monster-level").innerHTML= 0;
+     document.getElementById("allMonsterBonus").innerHTML= 0;
     }else{
-    document.getElementById("monster-level").innerHTML= parseInt(bonus);
+     document.getElementById("monster-level").innerHTML= parseInt(monsterBonus);
+     document.getElementById("allMonsterBonus").innerHTML= parseInt(monsterBonus);
     }
   }
 }
@@ -91,4 +101,24 @@ function hidingController(){
     document.getElementById("fight-menu").style.display="none";
     fightFlag=false;
   }
+}
+
+function addBook(){
+  if(bookFlag){
+    bookBonus=5;
+    updateAllHeroBonus();
+    bookFlag=false;
+  }else{
+    bookBonus=0;
+    updateAllHeroBonus();
+    bookFlag=true;
+  }
+}
+
+function updateAllHeroBonus() {
+  allHeroBonus=lvl+ parseInt(itemBonus) +bookBonus;
+  document.getElementById("allHeroBonus").innerHTML=allHeroBonus;
+  var progress = document.getElementById("progress-bar");
+  let status=allHeroBonus/parseInt(monsterBonus);
+  RPGUI.set_value(progress, status);
 }
