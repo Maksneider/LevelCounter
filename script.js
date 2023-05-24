@@ -51,24 +51,31 @@ function setBonus() {
   }else if(parseInt(itemBonus) === parseInt(itemBonus, 10)){
     if(parseInt(itemBonus) > 999 || parseInt(itemBonus) < 0){
     document.getElementById("fight-bonus").innerHTML= 0;
+    itemBonus = 0;
+    updateAllHeroBonus();
     }else{
     document.getElementById("fight-bonus").innerHTML= parseInt(itemBonus);
+    itemBonus=parseInt(itemBonus);
     updateAllHeroBonus();
     }
   }
 }
 
 function setMonster() {
-  var monsterBonus = prompt("Set monster's level");
+  monsterBonus = prompt("Set monster's level");
   if (monsterBonus === 'chuj'){
     alert("Sam jesteś chuj");
   }else if(parseInt(monsterBonus) === parseInt(monsterBonus, 10)){
     if(parseInt(monsterBonus) > 999 || parseInt(monsterBonus) < 0){
      document.getElementById("monster-level").innerHTML= 0;
      document.getElementById("allMonsterBonus").innerHTML= 0;
+     monsterBonus=0;
+     updateAllHeroBonus();
     }else{
      document.getElementById("monster-level").innerHTML= parseInt(monsterBonus);
      document.getElementById("allMonsterBonus").innerHTML= parseInt(monsterBonus);
+     monsterBonus=parseInt(monsterBonus);
+     updateAllHeroBonus();
     }
   }
 }
@@ -119,6 +126,12 @@ function updateAllHeroBonus() {
   allHeroBonus=lvl+ parseInt(itemBonus) +bookBonus;
   document.getElementById("allHeroBonus").innerHTML=allHeroBonus;
   var progress = document.getElementById("progress-bar");
-  let status=allHeroBonus/parseInt(monsterBonus);
-  RPGUI.set_value(progress, status);
+  if(allHeroBonus>parseInt(monsterBonus)){
+    RPGUI.set_value(progress, 1.0);
+  }else if (allHeroBonus == parseInt(monsterBonus)){
+    RPGUI.set_value(progress, 0.5);
+  }else{
+    let status=(allHeroBonus/parseInt(monsterBonus));
+    RPGUI.set_value(progress, status);
+  } 
 }
