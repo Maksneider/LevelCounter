@@ -1,3 +1,4 @@
+
 var lvl=1;
 var lvlD=new Audio();
 lvlD.src="audio/lvlDown.mp3";
@@ -34,6 +35,32 @@ function roll(){
   rollSound.currentTime=0;
   let rolled = getRandomINT(1,6);
   document.getElementById("roll-number").innerHTML = rolled;
+}
+
+function setBonus() {
+  var bonus = prompt("What's your bonus?");
+  if (bonus === 'chuj'){
+    alert("Sam jesteś chuj");
+  }else if(parseInt(bonus) === parseInt(bonus, 10)){
+    if(parseInt(bonus) > 999 || parseInt(bonus) < 0){
+    document.getElementById("fight-bonus").innerHTML= 0;
+    }else{
+    document.getElementById("fight-bonus").innerHTML= parseInt(bonus);
+    }
+  }
+}
+
+function setMonster() {
+  var bonus = prompt("Set monster's level");
+  if (bonus === 'chuj'){
+    alert("Sam jesteś chuj");
+  }else if(parseInt(bonus) === parseInt(bonus, 10)){
+    if(parseInt(bonus) > 999 || parseInt(bonus) < 0){
+    document.getElementById("monster-level").innerHTML= 0;
+    }else{
+    document.getElementById("monster-level").innerHTML= parseInt(bonus);
+    }
+  }
 }
 
 function fight() {

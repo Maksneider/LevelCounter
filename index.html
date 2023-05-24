@@ -28,9 +28,16 @@
             <p class="left-text" id="fight-menu-level" style="font-size: 15px;" >Level:</p>
             <p class="right-text" id="fight-level" style="font-size: 20px;">1</p>
           </div>
+          <div class="small-buttons-container">
+            <button id="small-buttons" class="rpgui-button" type="button" onclick="decrease()"><p style="font-size: 20px;">-</p></button>
+            <button id="small-buttons" class="rpgui-button" type="button" onclick="increase()"><p style="font-size: 20px;">+</p></button>
+          </div>
           <div class="fight-menu-container">
             <p class="left-text" id="item-bonus" style="font-size: 15px;">Item bonus:</p>
             <p class="right-text" id="fight-bonus" style="font-size: 20px;">0</p>
+          </div>
+          <div class="small-buttons-container">
+            <button id="small-buttons" class="rpgui-button" type="button" onclick="setBonus()"><p style="font-size: 20px;">Set</p></button>
           </div>
           <div class="fight-menu-container">
             <p class="left-text" id="fight-book">Munchkinomikon:</p>
@@ -39,6 +46,9 @@
           <div class="fight-menu-container">
             <p class="left-text" id="monster">Monster level:</p>
             <p class="right-text" id="monster-level" style="font-size: 20px;">1</p>
+          </div>
+          <div class="small-buttons-container">
+            <button id="small-buttons" class="rpgui-button" type="button" onclick="setMonster()"><p style="font-size: 20px;">Set</p></button>
           </div>
         </div>
       </div>
